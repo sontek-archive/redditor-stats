@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Hello, Reddit!</title>
+<link rel="shortcut icon" href="http://www.reddit.com/static/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/static/style.css" /> 
+
+{% if data %}
+    <h1>{{ username }}</h1>
+    <dl class="table-display">
+        {% for item in data %}
+                <dt>{{ item[0] }}</dt>
+                <dd>{{ item[1] }}%</dd>
+        {% endfor %}
+    </dl>
+{% else %}
+  <h1>Couldn't find data!</h1>
+{% endif %}
