@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config.from_pyfile('web.cfg')
 cache = Cache(app)
 
-@cache.memoize(timeout=1440)
+@cache.memoize(timeout=86400)
 def get_stats(username):
     return get_percentages(username)
 
